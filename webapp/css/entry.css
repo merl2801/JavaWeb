@@ -1,0 +1,30 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #ecf0f3;
+}
+
+.container .form-group input {
+    width: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 15px 10px 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.container .upload-image {
+    padding: 10px;
+}
