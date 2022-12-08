@@ -16,13 +16,13 @@
                     <div class="form-group col-md-6 ">
                         <label class="form-label" for="InputName">氏名</label>
                         <span class="text-danger">*</span>
-                        <input id="InputName" class="form-control" type="text" name="name">
+                        <input id="InputName" class="form-control" type="text" name="name" required>
                     </div>
 
                     <div class="form-group col-md-6 ">
                         <label class="form-label" for="InputEmail">Email</label>
                         <span class="text-danger">*</span>
-                        <input id="InputEmail" class="form-control" type="email" name="email">
+                        <input id="InputEmail" class="form-control" type="email" name="email" required>
                     </div>
                 </div>
 
@@ -30,13 +30,13 @@
                     <div class="form-group col-md-6 ">
                         <label class="form-label" for="InputName">パスワード</label>
                         <span class="text-danger">*</span>
-                        <input id="InputPassword" class="form-control" type="password" name="password">
+                        <input id="InputPassword" class="form-control" type="password" name="password" required>
                     </div>
 
                     <div class="form-group col-md-2 ">
                         <label class="form-label" for="InputZip">郵便局</label>
                         <span class="text-danger">*</span>
-                        <input id="InputEmaiZip" class="form-control" type="text" name="post-office">
+                        <input id="InputEmaiZip" class="form-control" type="text" name="post-office" required>
                     </div>
                     <div class="form-group col-md-3 ">
                         <label class="form-label" for="InputPrecture">都道府県</label>
@@ -66,7 +66,7 @@
                     <div class="form-group col-md-12 ">
                         <label class="form-label" for="InputBuilding">建物・部屋番号</label>
 
-                        <input id="InputBuilding" class="form-control" type="text" name="room_number" required> </div>
+                        <input id="InputBuilding" class="form-control" type="text" name="room_number" > </div>
                 </div>
                 <p class="alert alert-warning">
                     ユーザー登録サービス利用規定・個人情報のお取り扱いについて

@@ -8,9 +8,21 @@ public class Store {
 	protected String business_hours;
 	protected String  products_handled;
 	protected String image;
+	protected String email;
 	
 	public Store() {
 		
+	}
+	
+	public Store(String email,String name, String address, int phone, String business_hour, String products_handled, String image) {
+		super();
+		this.email = email;
+		this.name = name;
+		this.address = address;
+		this.phone = phone;
+		this.business_hours = business_hour;
+		this.products_handled = products_handled;
+		this.image = image;
 	}
 	
 	public Store(String name, String address, int phone, String business_hour, String products_handled, String image) {

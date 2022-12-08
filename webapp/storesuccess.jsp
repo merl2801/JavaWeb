@@ -48,10 +48,9 @@
       </div>
         <h1>Success</h1> 
         <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
-        <h1>${sessionScope.Marketname}</h1> 
-<!--         <a href="detai">Ok!!</a>
- -->      
-<%--  		<p><c:out value="${stores.id}" /></p>
- --%> 		</div>
+        <a href="detail?email=${sessionScope.email}">Ok!!</a>
+      
+		<p>${sessionScope.email}</p>
+ 		</div>
     </body>
 </html>

@@ -1,18 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<%-- <%
-String name = request.getParameter("store-name");
-name = new String(name.getBytes("8859_1"), "UTF-8");
-String address = request.getParameter("address");
-address = new String(address.getBytes("8859_1"), "UTF-8");
-String phone = request.getParameter("phone");
-phone = new String(phone.getBytes("8859_1"), "UTF-8");
-String time = request.getParameter("time");
-time = new String(time.getBytes("8859_1"), "UTF-8");
-String product = request.getParameter("product");
-product = new String(product.getBytes("8859_1"), "UTF-8");
-%> --%>
     <!DOCTYPE html>
     <html>
 

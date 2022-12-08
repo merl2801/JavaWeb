@@ -28,14 +28,14 @@
                 <!-- アカウント -->
                 <div class="mt-3 form-group d-flex align-items-center">
                     <span class="user"></span>
-                    <input type="text" name="userName" id="userName" placeholder="アカウント">
+                    <input type="text" name="userName" id="userName" placeholder="アカウント" required>
                 </div>
 
                 <!-- パスワード -->
                 <div class="mt-3 form-group">
                     <span class="pwd"></span>
                     <span class="user"></span>
-                    <input type="password" name="password" id="password" placeholder="パスワード">
+                    <input type="password" name="password" id="password" placeholder="パスワード" required>
                 </div>
 
                 <!-- buttons -->

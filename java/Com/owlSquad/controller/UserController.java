@@ -126,15 +126,20 @@ public class UserController extends HttpServlet {
 		 
 		 try {
 			if(userDAO.loginUser(user)) {
-				response.sendRedirect("entry.jsp");
+				session.setAttribute("email", user.getEmail());
+				response.sendRedirect("storesuccess.jsp");
 			} else {
-				response.sendRedirect("MarketList.jsp");
+				response.sendRedirect("login.jsp");
             }
 		} catch (ClassNotFoundException e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 	
+	}
+	
+	public void LoginDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException{
+		
 	}
 
 }

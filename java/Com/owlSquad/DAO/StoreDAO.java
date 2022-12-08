@@ -34,12 +34,12 @@ public class StoreDAO {
     	return connection;
     }
     
-    public Store selectStore(int id) {
+    public Store selectStore(String email ) {
     	Store store = null;
-    	String sql = "SELECT * FROM entry WHERE id = ?";
+    	String sql = "SELECT Market_Detail.name, Market_Detail.address, Market_Detail.phone, Market_Detail.business_hours, Market_Detail.Products_handled, Market_Detail.image FROM Market_Detail JOIN users ON users.id = Market_Detail.id WHERE users.email = ?";
     	try (Connection connection = getConnection();
     			PreparedStatement preparedStatement = connection.prepareStatement(sql);){
-			preparedStatement.setInt(1, id);
+			preparedStatement.setString(1, email);
 			ResultSet rs = preparedStatement.executeQuery();
 			
 			while (rs.next()) {
@@ -50,7 +50,7 @@ public class StoreDAO {
 				String products_handled = rs.getString("products_handled");
 				String image = rs.getString("image");
 				
-				store = new Store(id,name,address,phone,business_hours,products_handled,image);
+				store = new Store(email,name,address,phone,business_hours,products_handled,image);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -58,9 +58,10 @@ public class StoreDAO {
     	return store;
     }
     
+    
     public List<Store> selectAllStores(){
     	List<Store> storeList = new ArrayList<Store>();
-    	String sql = "SELECT * FROM entry";
+    	String sql = "SELECT * FROM Market_Detail";
     	try (Connection connection = getConnection();
     			PreparedStatement preparedStatement = connection.prepareStatement(sql);){
     		
@@ -83,7 +84,7 @@ public class StoreDAO {
     }
     
     public void insertStore(Store store) throws SQLException{
-    	String sql = "INSERT INTO entry (name, address, phone, business_hours, products_handled, image, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, now(), now())";
+    	String sql = "INSERT INTO Market_Detail (name, address, phone, business_hours, products_handled, image, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, now(), now())";
     	
     	try (Connection connection = getConnection();
     			PreparedStatement preparedStatement = connection.prepareStatement(sql)){

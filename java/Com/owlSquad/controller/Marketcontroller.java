@@ -103,7 +103,7 @@ public class Marketcontroller extends HttpServlet {
 		
 		Part file = request.getPart("image");
 		String image = file.getSubmittedFileName();
-		String uploadPath = "/Applications/Eclipse_2021-12.app/Contents/workspace/team-work/example/src/main/webapp/uploadImages/" + image;
+		String uploadPath = "C:\\Users\\210067\\Desktop\\team-work\\owl-squad\\src\\main\\webapp\\uploadImages/" + image;
 		FileOutputStream fos = new FileOutputStream(uploadPath);
 		System.out.println("Upload Path : "+uploadPath);
 
@@ -139,7 +139,7 @@ public class Marketcontroller extends HttpServlet {
 //        String image = request.getParameter("image");
         Part file = request.getPart("image");
 		String image = file.getSubmittedFileName();
-		String uploadPath = "/Applications/Eclipse_2021-12.app/Contents/workspace/team-work/example/src/main/webapp/uploadImages/" + image;
+		String uploadPath = "C:\\Users\\210067\\Desktop\\team-work\\owl-squad\\src\\main\\webapp\\uploadImages/" + image;
 		FileOutputStream fos = new FileOutputStream(uploadPath);
 		System.out.println("Upload Path : "+uploadPath);
 

@@ -64,9 +64,9 @@ public class StoreController extends HttpServlet {
 	
 	public void showdetail(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		Store existingStore = storeDAO.selectStore(id);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("detail.jsp");
+		String email = request.getParameter("email");
+		Store existingStore = storeDAO.selectStore(email);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("LoginDetail.jsp");
 		request.setAttribute("store", existingStore);
 		dispatcher.forward(request, response);
 

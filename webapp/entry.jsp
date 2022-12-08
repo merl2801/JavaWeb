@@ -11,20 +11,8 @@
 %> 
  --%>
 
-        <!DOCTYPE html>
-        <html>
-
-        <head>
-            <meta http-equiv="content-type" charset="UTF-8">
-            <title>店舗登録</title>
-            <link rel="stylesheet" href="./css/entry.css">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            <link rel="stylesheet" href="./css/entry.css">
-            <link rel="stylesheet" href="./css/menu.css">
-        </head>
-
-        <body>
-         <%@ include file="../layouts/logout.html" %>
+       
+         <%@ include file="../layouts/logout.jsp" %>
             <main class="container">
                 <h1 class="text-center p-5">店舗登録</h1>
 
@@ -81,9 +69,4 @@
                     <!-- <a href="logout">ログオウ</a> -->
                 </form>
             </main>
-            <footer>
-
-            </footer>
-        </body>
-
-        </html>
+          
