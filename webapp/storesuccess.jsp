@@ -48,7 +48,7 @@
       </div>
         <h1>Success</h1> 
         <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
-        <a href="detail?email=${sessionScope.email}">Ok!!</a>
+        <a href="detail?email=${sessionScope.email}">次→</a>
       
 		<p>${sessionScope.email}</p>
  		</div>

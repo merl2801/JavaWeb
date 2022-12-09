@@ -33,17 +33,13 @@ public class UserDAO {
     }
     
     public void insertUser(User user) throws SQLException{
-    	String sql = "INSERT INTO users(name,email,password,post,Prefecture,city,street,room_number,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,now(),now()) ";
+    	String sql = "INSERT INTO users(name,email,password,role_as,created_at,updated_at) VALUES(?,?,?,?,now(),now()) ";
     	try (Connection connection = getConnection(); 
     			PreparedStatement preparedStatement = connection.prepareStatement(sql);){
     		preparedStatement.setString(1, user.getName());
     		preparedStatement.setString(2, user.getEmail());
     		preparedStatement.setString(3, user.getPassword());
-    		preparedStatement.setString(4, user.getPost_office());
-    		preparedStatement.setString(5, user.getPrefecture());
-    		preparedStatement.setString(6, user.getCity());
-    		preparedStatement.setString(7, user.getStreet());
-    		preparedStatement.setString(8, user.getRoom_number());
+    		preparedStatement.setInt(4, user.getRole_as());
     		
     		preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -71,6 +67,22 @@ public class UserDAO {
     	
     }
     
+    
+    public boolean checkRole_as(User role) {
+    	boolean status = false;
+    	String sql = "select * from users where email = ? and password = ? and role_as = ?";
+    	try (Connection connection = getConnection(); 
+    			PreparedStatement preparedStatement = connection.prepareStatement(sql);){
+    		preparedStatement.setString(1, role.getEmail());
+    		preparedStatement.setString(2, role.getPassword());
+    		preparedStatement.setInt(3, role.getRole_as());
+    		ResultSet rs = preparedStatement.executeQuery();
+            status = rs.next();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+    	return status;
+    }
     
 
 	

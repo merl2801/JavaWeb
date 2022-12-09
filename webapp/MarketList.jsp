@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
             <div>
-                <a href="#" class="navbar-brand"> Owl Squad </a>
+                <a href="index" class="navbar-brand"> Owl Squad </a>
             </div>
 
             <ul class="navbar-nav">

@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="./css/index.css">
          <link rel="stylesheet" href="./css/login.css">
          <link rel="stylesheet" href="./css/regist.css">
+          <link rel="stylesheet" href="./css/entry.css">	
         <title>owl-squad</title>
     </head>
 <body>

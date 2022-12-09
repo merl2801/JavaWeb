@@ -1,17 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-        <meta http-equiv="content-type" charset="UTF-8">
-        <title>店舗詳細</title>
-        <link rel="stylesheet" href="./css/entry.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/entry.css">
-    </head>
-
-    <body>
+    <%@ include file="../layouts/logout.jsp" %>
+   
         <main class="container">
             <h1 class="text-center p-5">店舗詳細</h1>
 
@@ -57,15 +47,6 @@
 
                     </div>
                 </div>
-
-                <div class="d-grid mb-3">
-                    <button class="btn btn-primary">登録</button>
-                </div>
             </form>
         </main>
-        <footer>
-
-        </footer>
-    </body>
-
-    </html>
+        

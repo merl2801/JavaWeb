@@ -13,13 +13,13 @@
             <form action="register" method="post" id="register-form">
 
                 <div class="row mb-3">
-                    <div class="form-group col-md-6 ">
+                    <div class="form-group col-md-12 ">
                         <label class="form-label" for="InputName">氏名</label>
                         <span class="text-danger">*</span>
                         <input id="InputName" class="form-control" type="text" name="name" required>
                     </div>
 
-                    <div class="form-group col-md-6 ">
+                    <div class="form-group col-md-12 ">
                         <label class="form-label" for="InputEmail">Email</label>
                         <span class="text-danger">*</span>
                         <input id="InputEmail" class="form-control" type="email" name="email" required>
@@ -27,56 +27,15 @@
                 </div>
 
                 <div class="row mb-3">
-                    <div class="form-group col-md-6 ">
+                    <div class="form-group col-md-12 ">
                         <label class="form-label" for="InputName">パスワード</label>
                         <span class="text-danger">*</span>
                         <input id="InputPassword" class="form-control" type="password" name="password" required>
                     </div>
 
-                    <div class="form-group col-md-2 ">
-                        <label class="form-label" for="InputZip">郵便局</label>
-                        <span class="text-danger">*</span>
-                        <input id="InputEmaiZip" class="form-control" type="text" name="post-office" required>
-                    </div>
-                    <div class="form-group col-md-3 ">
-                        <label class="form-label" for="InputPrecture">都道府県</label>
-                        <span class="text-danger">*</span>
-                        <select name="prefecture" id="InputPrecture" class="form-control">
-                        <option value="12">千葉県</option>
-                        <option value="13">東京都</option>
-                        <option value="14" selected>神奈川県</option>
-                    </select>
-                    </div>
+                    
                 </div>
-
-                <div class="row mb-3">
-                    <div class="form-group col-md-6 ">
-                        <label class="form-label" for="InputCity">市区町村</label>
-                        <!-- <span class="text-danger">*</span> -->
-                        <input id="InputCity" class="form-control" type="text" name="city">
-                    </div>
-
-                    <div class="form-group col-md-6 ">
-                        <label class="form-label" for="InputZip">町名番地</label>
-                        <!-- <span class="text-danger">*</span> -->
-                        <input id="InputEmaiZip" class="form-control" type="text" name="street">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="form-group col-md-12 ">
-                        <label class="form-label" for="InputBuilding">建物・部屋番号</label>
-
-                        <input id="InputBuilding" class="form-control" type="text" name="room_number" > </div>
-                </div>
-                <p class="alert alert-warning">
-                    ユーザー登録サービス利用規定・個人情報のお取り扱いについて
-                </p>
-                <div class="row mb-3">
-                    <div class="form-agree">
-                        <input id="inputAgree" class="form-check-input" type="checkbox" name="agree">
-                        <label for="inputAgree" class="form-check-label">同意する</label>
-                    </div>
-                </div>
+               
                 <div class="d-grid mb-3">
                     <button class="btn btn-primary" name="signup" id="signup" value="Register">ログイン</button>
                 </div>

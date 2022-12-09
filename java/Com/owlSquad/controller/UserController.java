@@ -78,28 +78,14 @@ public class UserController extends HttpServlet {
 		String password = request.getParameter("password");	
 		 byte[] result = digest.digest(password.getBytes());
 		 password= String.format("%040x", new BigInteger(1, result));
+		int role_as = 0;
 		
-		
-		String post = request.getParameter("post-office");
-		String prefecture = request.getParameter("prefecture");
-		prefecture = new String(prefecture.getBytes("8859_1"), "UTF-8");
-		String city = request.getParameter("city");
-		city = new String(city.getBytes("8859_1"), "UTF-8");
-		String street = request.getParameter("street");
-		street = new String(street.getBytes("8859_1"), "UTF-8");
-		String room_number = request.getParameter("room_number");
-		room_number = new String(room_number.getBytes("8859_1"), "UTF-8");
-		User user = new User(name, email, password, post, prefecture, city, street,room_number);
+		User user = new User(name, email, password, role_as);
 		userDAO.insertUser(user);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("entry.jsp");
 		session.setAttribute("Uname", user.getName());
 		session.setAttribute("Uemail", user.getEmail());
 		session.setAttribute("Upassword", user.getPassword());
-		session.setAttribute("Upost", user.getPost_office());
-		session.setAttribute("Uprefecture", user.getPrefecture());
-		session.setAttribute("Ucity", user.getCity());
-		session.setAttribute("Ustreet", user.getStreet());
-		session.setAttribute("Uroom_number", user.getRoom_number());
 		dispatcher.forward(request, response);
 
 
@@ -120,15 +106,29 @@ public class UserController extends HttpServlet {
 		String upwd = request.getParameter("password");
 		byte[] result = digest.digest(upwd.getBytes());
 		 upwd = String.format("%040x", new BigInteger(1, result));
+		 
+		 int role_as_1 = 1;
+		 
 		 User user = new User();
+		 
+		 User role_as_Admin = new User();
+		 
 		 user.setEmail(uemail);
-		 user.setPassword(upwd);	
+		 user.setPassword(upwd);
+		 role_as_Admin.setRole_as(role_as_1);
+		 role_as_Admin.setEmail(uemail);
+		 role_as_Admin.setPassword(upwd);
+		
+		 
 		 
 		 try {
-			if(userDAO.loginUser(user)) {
+			if(userDAO.loginUser(user) && userDAO.checkRole_as(role_as_Admin)) {
+//				session.setAttribute("email", user.getEmail());
+				response.sendRedirect("MarketList.jsp");
+			}else if(userDAO.loginUser(user)) {
 				session.setAttribute("email", user.getEmail());
 				response.sendRedirect("storesuccess.jsp");
-			} else {
+			}else {
 				response.sendRedirect("login.jsp");
             }
 		} catch (ClassNotFoundException e) {

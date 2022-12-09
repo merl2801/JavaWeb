@@ -22,7 +22,7 @@
                         <div class="form-group col-md-12 ">
                             <label class="form-label">店舗名</label>
 
-                            <input class="form-control" type="text" name="name" style="ime-mode:active" required="required">
+                            <input class="form-control" type="text" name="name" style="ime-mode:active" required>
                          </div>
                     </div>
 
@@ -30,7 +30,7 @@
                         <div class="form-group col-md-12 ">
                             <label class="form-label">住所</label>
 
-                            <input class="form-control" type="text" name="address" style="ime-mode:active" > 
+                            <input class="form-control" type="text" name="address" style="ime-mode:active" required> 
                             </div>
                     </div>
 
@@ -49,7 +49,7 @@
                     <div class="row mb-3">
                         <div class="form-group mb-3">
                             <label for="" class="form-label">取扱商品</label>
-                            <input type="text" class="form-control" name="products_handled" style="ime-mode:active">
+                            <input type="text" class="form-control" name="products_handled" style="ime-mode:active"required>
                         </div>
                     </div>
 
