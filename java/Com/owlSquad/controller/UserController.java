@@ -124,7 +124,7 @@ public class UserController extends HttpServlet {
 		 try {
 			if(userDAO.loginUser(user) && userDAO.checkRole_as(role_as_Admin)) {
 //				session.setAttribute("email", user.getEmail());
-				response.sendRedirect("MarketList.jsp");
+				response.sendRedirect("Admin/MarketList.jsp");
 			}else if(userDAO.loginUser(user)) {
 				session.setAttribute("email", user.getEmail());
 				response.sendRedirect("storesuccess.jsp");

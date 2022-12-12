@@ -14,11 +14,12 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
             <div>
-                <a href="index" class="navbar-brand"> Owl Squad </a>
+                <a href="<%=request.getContextPath()%>/index" class="navbar-brand"> Owl Squad </a>
             </div>
 
             <ul class="navbar-nav">
                 <li><a href="<%=request.getContextPath()%>/market_list" class="nav-link">スーパー</a></li>
+                <li><a href="<%=request.getContextPath()%>/logout" class="nav-link">ログアウト </a></li>
             </ul>
         </nav>
     </header>

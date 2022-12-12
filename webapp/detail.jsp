@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="../layouts/logout.jsp" %>
-   
+
         <main class="container">
             <h1 class="text-center p-5">店舗詳細</h1>
 
@@ -39,14 +39,13 @@
                     </div>
                 </div>
 
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <div class="upload-image md-3 alert-warning">
                         <label for="" class="form-label">店舗画像</label>
                         <span class="text-danger">*</span>
                         <input type="file" multiple>
 
-                    </div>
+                    </div> -->
                 </div>
             </form>
         </main>
-        

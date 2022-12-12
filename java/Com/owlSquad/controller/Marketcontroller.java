@@ -76,13 +76,13 @@ public class Marketcontroller extends HttpServlet {
 		// TODO Auto-generated method stub
 		 List<MarketList> listMarket = marketDAO.selectAllMarket();
 		 request.setAttribute("listMarket", listMarket);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("MarketList.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/MarketList.jsp");
 		dispatcher.forward(request, response);
 	}
 	
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 		    throws ServletException, IOException {
-		        RequestDispatcher dispatcher = request.getRequestDispatcher("MarketForm.jsp");
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/MarketForm.jsp");
 		        dispatcher.forward(request, response);
 		    }
 	
@@ -90,7 +90,7 @@ public class Marketcontroller extends HttpServlet {
 		    throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
         MarketList existingMarket = marketDAO.selectMarket(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("MarketForm.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("Admin/MarketForm.jsp");
         request.setAttribute("market", existingMarket);
         dispatcher.forward(request, response);
 
