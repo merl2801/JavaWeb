@@ -36,13 +36,14 @@ public class StoreDAO {
     
     public Store selectStore(String email ) {
     	Store store = null;
-    	String sql = "SELECT Market_Detail.name, Market_Detail.address, Market_Detail.phone, Market_Detail.business_hours, Market_Detail.Products_handled, Market_Detail.image FROM Market_Detail JOIN users ON users.id = Market_Detail.id WHERE users.email = ?";
+    	String sql = "SELECT Market_Detail.id ,Market_Detail.name, Market_Detail.address, Market_Detail.phone, Market_Detail.business_hours, Market_Detail.Products_handled, Market_Detail.image FROM Market_Detail JOIN users ON users.id = Market_Detail.id WHERE users.email = ?";
     	try (Connection connection = getConnection();
     			PreparedStatement preparedStatement = connection.prepareStatement(sql);){
 			preparedStatement.setString(1, email);
 			ResultSet rs = preparedStatement.executeQuery();
 			
 			while (rs.next()) {
+				int id = rs.getInt("id");
 				String name = rs.getString("name");
 				String address = rs.getString("address");
 				int phone = rs.getInt("phone");
@@ -50,7 +51,7 @@ public class StoreDAO {
 				String products_handled = rs.getString("products_handled");
 				String image = rs.getString("image");
 				
-				store = new Store(email,name,address,phone,business_hours,products_handled,image);
+				store = new Store(email,id,name,address,phone,business_hours,products_handled,image);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -58,6 +59,28 @@ public class StoreDAO {
     	return store;
     }
     
+    public Store selectStorebyId(int id) {
+    	Store Editstore = null;
+    	String sql = "SELECT * FROM market_detail WHERE id = ?";
+    	try (Connection connection = getConnection();
+    			PreparedStatement preparedStatement = connection.prepareStatement(sql);){
+    		preparedStatement.setInt(1, id);
+			ResultSet rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				String name = rs.getString("name");
+				String address = rs.getString("address");
+				int phone = rs.getInt("phone");
+				String business_hours  = rs.getString("business_hours");
+				String products_handled = rs.getString("products_handled");
+				String image = rs.getString("image");
+				Editstore = new Store(name, address, phone, business_hours, products_handled,image);
+			}
+		} catch (SQLException e) {
+			// TODO: handle exception
+			printSQLException(e);
+		}
+    	return Editstore;
+    }
     
     public List<Store> selectAllStores(){
     	List<Store> storeList = new ArrayList<Store>();

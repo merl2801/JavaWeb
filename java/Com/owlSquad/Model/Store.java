@@ -14,8 +14,9 @@ public class Store {
 		
 	}
 	
-	public Store(String email,String name, String address, int phone, String business_hour, String products_handled, String image) {
+	public Store(String email,int id,String name, String address, int phone, String business_hour, String products_handled, String image) {
 		super();
+		this.id = id;
 		this.email = email;
 		this.name = name;
 		this.address = address;

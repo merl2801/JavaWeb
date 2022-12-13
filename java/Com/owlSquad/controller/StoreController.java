@@ -17,7 +17,7 @@ import Com.owlSquad.Model.Store;
 /**
  * Servlet implementation class StoreController
  */
-@WebServlet(urlPatterns = {"/store_insert","/detail"})
+@WebServlet(urlPatterns = {"/store_insert","/detail","/store_edit"})
 public class StoreController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private StoreDAO storeDAO;
@@ -50,6 +50,9 @@ public class StoreController extends HttpServlet {
 			case "/detail":
 				showdetail(request, response);
 				break;
+			case "/store_edit":
+				showEditStore(request, response);
+				break;
 			default:
 				break;
 			}
@@ -70,6 +73,15 @@ public class StoreController extends HttpServlet {
 		request.setAttribute("store", existingStore);
 		dispatcher.forward(request, response);
 
+	}
+	
+	public void showEditStore(HttpServletRequest request, HttpServletResponse response) 
+		throws ServletException, IOException, SQLException{
+		int id = Integer.parseInt(request.getParameter("id"));
+		Store existingStore = storeDAO.selectStorebyId(id);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("EditUserStore.jsp");
+		request.setAttribute("EStore", existingStore);
+		dispatcher.forward(request, response);
 	}
 	
 	public void insertStore(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException{	

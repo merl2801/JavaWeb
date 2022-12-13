@@ -49,5 +49,8 @@
 
                     </div> -->
                     </div>
+                    <div>
+                        <a href="store_edit?id=<c:out value="${store.id}"/>">Edit</a>
+                    </div>
                 </form>
             </main>
